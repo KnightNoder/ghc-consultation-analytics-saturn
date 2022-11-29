@@ -60,7 +60,11 @@ const CallBack = ({
           category = "wellness";
         }
         if (stateObj["Select category for consultation"] == "hair") {
-          category = (process.env.REACT_APP_BRAND == 'Saturn') ? "hair-products" : "hair-1"
+          if(process.env.REACT_APP_COUNTRY == 'USA'){
+            category='hair';
+          } else {
+            category = (process.env.REACT_APP_BRAND == 'Saturn') ? "hair-products" : "hair-1"
+          }
         }
         if (stateObj["Select category for consultation"] == "skin") {
           category = "skin";
